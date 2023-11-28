@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+ 
+<hibernate-mapping>
+<class name="myshop.Item" table="ItemInfo">
+<id name="item_code" column="ItemCode"/>
+<property name="item_name" column="ItemName"/>
+<property name="item_price" column="price"/>
+<property name="qoh" column="Quantity"/>
+<many-to-one name="cusobj" class="myshop.Customer" fetch="select">
+<column  name="customer_code" not-null="true"/>
+</many-to-one>
+
+</class>
+
+
+
+</hibernate-mapping>
